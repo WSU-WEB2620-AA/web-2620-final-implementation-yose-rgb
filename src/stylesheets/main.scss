@@ -1,1 +1,726 @@
-// Your styles go here
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import 'variables'; 
+
+
+$cyan: #42CAFD;        
+$cream: #f6e0ce;      
+$maroon: #5E0B15;      
+$card-border: #4b0d0d;
+$btn-red: #e9553e;
+$btn-blue: #72caff;
+$text-dark: #3a1f14;
+$muted: #6b5b56;
+
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Varela Round';
+  background: $cream;
+  color: $text-dark;
+  
+}
+
+
+.site-bg { 
+    min-height:100vh; 
+    display:flex; 
+    flex-direction:column; }
+
+// topbar
+.topbar {
+  background: $cyan;
+  padding: 12px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:3px solid rgba(0,0,0,0.06);
+
+  .logo {
+    width:56px; 
+    height:56px; 
+    object-fit:cover; 
+    border-radius:100px;
+    
+  }
+
+ 
+ 
+
+  .icon-btn {
+    background: white; 
+    border: none; 
+    font-size:20px; 
+    padding:6px;
+  }
+
+  .hamburger {
+    width:40px; 
+    height:36px; 
+    background:#fff; 
+    border-radius:6px; 
+    border:2px solid rgba(0,0,0,0.06);
+    display:inline-flex; 
+    align-items:center; 
+    justify-content:center; 
+    padding:6px;
+
+    .hamburger-line { 
+        display:block; 
+        width:18px; 
+        height:2px; 
+        background:$text-dark; 
+        margin:2px 0; 
+        border-radius:2px; 
+    }
+  }
+}
+
+// search row
+.search-row { 
+    padding:10px 12px 8px;
+
+  .search-input { 
+    width:100%; 
+    background:white; 
+    box-shadow:0 3px 0 rgba(0,0,0,0.03);}
+}
+
+
+.container { 
+    padding-left:14px; 
+    padding-right:14px; 
+    flex:1; 
+}
+
+
+.tile {
+  border-radius:12px; 
+  overflow:hidden; 
+  border:3px solid $card-border; 
+  background: lighten($cream, 2%);
+
+  .tile-img { 
+    width:100%; 
+    height:230px; 
+    object-fit:cover; 
+    display:block; 
+}
+  .tile-cta { 
+    padding:12px; 
+    display:flex; 
+    justify-content:center; 
+}
+}
+
+.btn-cta {
+  border-radius:12px; 
+  padding:8px 26px; 
+  font-weight:800; 
+  font-family:'Varela Round'; 
+  font-size:18px; 
+  border:3px solid $card-border; 
+  box-shadow:0 4px 0 rgba(0,0,0,0.08);
+}
+
+.btn-cta.food { 
+    background:$btn-red; 
+    color:$cream; 
+}
+.btn-cta.lore { 
+    background:$btn-blue; 
+    color:$cream; 
+}
+
+
+.intro-bubble {
+  max-width:520px; 
+  background:$maroon; 
+  color:$maroon; 
+  padding:18px; 
+  margin:12px auto; 
+  
+  box-shadow:0 6px 18px rgba(0,0,0,0.08); 
+  position:relative; 
+  font-size:.95rem;
+
+  &::after{ content:''; 
+    position:absolute;
+     right:-8px; top:-8px;
+      width:44px; 
+      height:44px; 
+      background:$maroon; 
+      border-radius:0 22px 0 0; 
+    }
+}
+
+//recent news cards
+.recent-title { 
+   font-family: 'varela round'; 
+    color:$text-dark; 
+    font-size:20px; 
+    margin-top:8px; 
+    font-style: 'varela round';
+}
+
+.news-list { 
+    width:100%; 
+    display:flex; 
+    flex-direction:column; 
+    gap:18px; 
+    align-items:center; 
+}
+.news-card { 
+    background:$maroon; 
+    color:$cream; 
+    border-radius:16px;
+     padding:12px;
+      display:flex; 
+      align-items:center; 
+      gap:12px; 
+      width:92%; 
+      max-width:420px; 
+
+  .news-thumb { 
+    width:72px; 
+    height:72px; 
+    object-fit:cover; 
+    border-radius:12px; 
+    
+}
+  .news-head { 
+    font-size:1rem; 
+    margin:0 0 .25rem; 
+}
+  p { 
+    margin:0; 
+    font-size:.92rem; 
+    line-height:1.35; 
+
+}
+}
+
+//newsletter
+.newsletter { 
+    text-align:center;
+
+  .newsletter-title { 
+    font-family:$text-dark; 
+    font-weight:700; 
+    margin-bottom:8px; 
+    justify-self: center;
+}
+
+  .newsletter-input { 
+    width:150px; 
+    height:36px; 
+    border-radius:4px; 
+    border:none; 
+    box-shadow:0 4px 0 rgba(0,0,0,0.06); 
+    padding:6px 10px; 
+}
+  .small-btn { 
+    padding:8px 18px; 
+    border-radius:8px; 
+    box-shadow:0 4px 0 rgba(0,0,0,0.06); 
+    background:$cyan; 
+    color:$text-dark; 
+    border:$card-border; 
+    border-width: 0.5px;
+    font-weight:700; 
+}
+}
+
+
+//overlay menu
+.overlay { 
+    position:fixed; 
+    inset:0; 
+    background:rgba(0,0,0,0); 
+    visibility:hidden; 
+    opacity:0; 
+    transition:opacity 240ms ease, 
+    visibility 240ms ease; 
+    z-index:1100; 
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    pointer-events:none;
+
+  &.open{ 
+    visibility:visible; 
+    opacity:1; 
+    pointer-events:auto; 
+    background:rgba(0,0,0,0.45); 
+}
+  .overlay-nav { 
+    background:$cream; 
+    width:92%; 
+    max-width:420px; 
+    padding:28px; 
+    border-radius:10px; 
+    text-align:center; 
+    box-shadow:0 18px 80px rgba(0,0,0,0.3);
+
+    ul{ 
+        list-style:none; 
+        padding:0; 
+        margin:0;
+         display:flex; 
+         flex-direction:column;
+          gap:16px; 
+        }
+
+    a{ 
+        display:block; 
+        text-decoration:none;
+         font-size:20px; 
+         font-weight:700; 
+         color:$text-dark; 
+         padding:10px; 
+         border-radius:8px; 
+        }
+  }
+
+  .overlay-close{ 
+    position:absolute; 
+    top:12px; 
+    right:12px; 
+    background:transparent; 
+    border:none; 
+    font-size:36px; 
+    color:#fff; cursor:pointer; 
+}
+}
+
+// cards, tables, media, alerts 
+.recipe-card { 
+    background: $maroon; 
+    border-radius:10px; 
+    border:2px solid rgba(0,0,0,0.04); 
+    box-shadow:0 6px 18px rgba(0,0,0,0.03); 
+    padding:12px; 
+}
+
+
+.recipe-thumb{ 
+    width:100%; 
+    height:140px; 
+    object-fit:cover; 
+    border-radius:8px; 
+}
+
+
+.chip{ 
+    background:transparent;
+     border:2px solid rgba(0,0,0,0.06); 
+    padding:6px 10px; 
+    border-radius:15px; 
+    font-weight:700; 
+}
+
+
+.chip.active{ 
+    background:$maroon; 
+    color:$cream; 
+   
+}
+
+
+
+.custom-table { 
+    background:#ffffff;
+     border-radius:8px; 
+    border:2px solid rgba(0,0,0,0.04); 
+}
+
+
+.alert-custom { 
+    background:$btn-red;
+     color:#000;
+     padding:10px 12px; 
+    border-radius:8px; 
+    font-weight:700; 
+    margin-bottom:10px; }
+
+// media article
+.media-article { 
+    display:flex;
+     gap:12px; 
+    align-items:flex-start; 
+}
+
+.media-thumb{ 
+    width:96px; 
+    height:72px; 
+    object-fit:cover; 
+    border-radius:8px; }
+
+// account page
+.welcome-bubble{ 
+    background:$maroon; 
+    color: $cream; 
+    padding:12px; 
+    border-radius:10px;
+     max-width:320px; 
+     margin:0 auto; 
+     text-align:center;
+     }
+
+.action-card{ 
+    width:92%; 
+    max-width:420px; 
+    background:#fff; 
+    border-radius:10px; 
+    padding:12px; 
+    border:2px solid rgba(0,0,0,0.04); 
+    text-decoration:none; 
+    color:inherit; 
+}
+
+// form stack
+.form-stack label{ 
+    font-weight:700; 
+    margin-top:8px; 
+}
+.small-btn{ 
+    background:$btn-blue; 
+    color:#000; 
+    border:none; 
+    padding:8px 16px; 
+    border-radius:8px; 
+    font-weight:700;
+ }
+
+
+
+// sign up form styles
+        .container {
+            
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #FFFFFF;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: $cyan;
+            border: 0.05rem;
+            color: $cream;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: $cyan;
+        }
+
+        #message {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .password-hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .password-strength {
+            margin-top: 5px;
+        }
+
+        .password-strength div {
+            height: 5px;
+            border-radius: 4px;
+        }
+
+        .weak {
+            width: 33%;
+            background-color: red;
+        }
+
+        .medium {
+            width: 66%;
+            background-color: orange;
+        }
+
+        .strong {
+            width: 100%;
+            background-color: green;
+        }
+
+//end sign up form styles
+
+//log in form styles
+.login-form {
+  width: 90%;
+  max-width: 380px;
+  margin: 120px auto 40px auto;
+  padding: 25px 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 6px 14px rgba(0,0,0,0.09);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: "Quicksand", sans-serif;
+
+  label {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #c5c5c5;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+
+    &:focus {
+      border-color: #ff895a;
+      box-shadow: 0px 0px 6px rgba(255,138,90,0.35);
+      outline: none;
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    background: #ff895a;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 12px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.25s ease;
+
+    &:hover {
+      background: #ff6a2c;
+    }
+  }
+}
+
+
+.login-form + p,
+.home-link {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  font-family: "Quicksand", sans-serif;
+
+  a {
+    margin-left: 4px;
+    color: #ff895a;
+    font-weight: 700;
+  }
+}
+
+// footer 
+.site-footer { 
+    background:$cyan; 
+    padding:18px 0; 
+
+    .ficon{ 
+        display:inline-block; 
+        width:36px; height:36px; 
+        border-radius:6px; 
+        
+        color:$text-dark; 
+        font-weight:700; 
+        line-height:36px; 
+        margin:0 6px; 
+        text-decoration:none;} 
+
+        .copyright{ 
+            font-size:.9rem; 
+            color:$text-dark; 
+            margin-top:8px;
+        }
+    }
+
+
+/*
+   MEDIUM SCREENS (TABLET)
+   */
+
+@media (min-width: 768px) {
+  .login-form {
+    margin-top: 150px;
+    padding: 32px 28px;
+    max-width: 420px;
+
+    input {
+      padding: 14px;
+      font-size: 1.05rem;
+    }
+
+    button {
+      padding: 14px 0;
+      font-size: 1.15rem;
+    }
+  }
+
+  .login-form + p,
+  .home-link {
+    font-size: 1rem;
+  }
+}
+
+/*
+   LARGE DESKTOP
+   
+*/
+
+@media (min-width: 992px) {
+  .login-form {
+    margin-top: 180px;
+    max-width: 480px;
+    padding: 40px 34px;
+    border-radius: 20px;
+
+    label {
+      font-size: 1.05rem;
+    }
+
+    input {
+      font-size: 1.1rem;
+      padding: 16px;
+    }
+
+    button {
+      font-size: 1.2rem;
+      padding: 16px 0;
+      border-radius: 12px;
+    }
+  }
+
+  .login-form + p,
+  .home-link {
+    font-size: 1.05rem;
+  }
+
+  body.site-bg {
+    background-color: $cream; 
+  }
+
+  /* Header */
+  .topbar {
+    background-color: $cyan; 
+    height: 125px;
+    display: flex;
+    align-items: center;
+  }
+
+  .topbar .logo {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* Title */
+  .h1-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: $text-dark;
+    font-weight: 700;
+  }
+
+  
+  .thankyou-image {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    max-width: 900px;
+    border-radius: 2px;
+   
+    margin-bottom: 2rem;
+  }
+
+  
+  p {
+    text-align: center;
+    font-size: 1.4rem;
+    color: $text-dark;
+    margin-bottom: 2rem;
+  }
+
+  /* Back to Home link*/
+  p:last-of-type {
+    text-align: left;
+    width: 70%;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.2rem;
+  }
+
+  p:last-of-type a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+  }
+
+  /* Footer styling */
+  .site-footer {
+    background-color: $cyan;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-icons i {
+    font-size: 2.2rem;
+  }
+
+  .copyright {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+}

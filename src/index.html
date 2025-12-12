@@ -1,16 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <title>Project Starter</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Miscellaneous Food Lore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheets/main.scss">
 </head>
 
-<body>
-  <!--  Your HTML goes here-->
-  <h1>Welcome to WEB 2620!!!!!</h1>
-<script type="module" src="./javascripts/main.js"></script>
+
+<body class="site-bg">
+
+  <header class="topbar d-flex align-items-center justify-content-between px-3">
+    <div class="d-flex align-items-left">
+      <img class="circle-logo" src="./images/hatiful-yosa-eE5NGk1zAtU-unsplash.jpg" alt="logo" class="logo">
+      <div class="site-title ms-2">
+        <div class="t1 align-items-center">Miscellaneous</div>
+        <div class="t2 align-items-center">Food Lore</div>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <button class="icon-btn search-icon" aria-label="Open search"><i class="fal fa-search"></i></button>
+      <button id="menuOpen" class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+   <div id="overlayMenu" class="overlay" aria-hidden="true">
+    <button id="menuClose" class="overlay-close" aria-label="Close menu">&times;</button>
+    <nav class="overlay-nav" aria-label="Main menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+<!--for desktop-->
+     <nav class="desktop-nav" aria-label="Main menu">
+   <nav class="overlay-nav" aria-label="Main menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  
+  <div class="search-row px-3 py-2">
+    <input class="form-control search-input" type="search" placeholder="Search recipes, lore, videos..." aria-label="Search">
+  </div>
+
+  <main class="container py-3">
+    
+    <section class="hero">
+      <article class="tile mb-4">
+        <img src="./images/allan-lainez-V0c5W5vCv6w-unsplash.jpg" alt="Food" class="tile-img">
+        <div class="tile-cta">
+          <a href="recipes.html" class="btn btn-cta food">FOOD</a>
+        </div>
+      </article>
+
+      <article class="tile mb-4">
+        <img src="./images/aditya-sahu-TR6n0FvbFiY-unsplash.jpg" alt="Lore" class="tile-img">
+        <div class="tile-cta">
+          <a href="lore.html" class="btn btn-cta lore">LORE</a>
+        </div>
+      </article>
+    </section>
+
+    
+    <section>
+      <div class="intro-bubble mx-auto mb-4">
+        <p>Welcome to Miscellaneous Food Lore! We talk about food, of course, and go into depth about any dish you can think of and if you can't find what you're looking for then send us an email. We're happy to learn and if you're just here for a bite then wait no more because we have plenty of recipes for you to follow!</p>
+      </div>
+    </section>
+
+   
+    <h2 class="recent-title text-center mb-3">Recent News</h2>
+    <section class="news-list d-flex flex-column align-items-center gap-3 mb-4">
+      
+      <article class="news-card d-flex align-items-center">
+        <img src="./images/david-thielen-lemontart-unsplash.jpg" alt="lemon tart" class="news-thumb me-3">
+        <div>
+          
+          <p class="mb-0">Feeling something sour today? Try out this fun lemon tart recipe!</p>
+        </div>
+      </article>
+
+      
+      <article class="news-card d-flex align-items-center">
+        <img src="./images/pexels-cup-of-mochi-8471727.jpg" alt="mochi" class="news-thumb me-3">
+        <div>
+          
+          <p class="mb-0">Curious about how mochi is made? I was, so here’s some cool mochi facts!</p>
+        </div>
+      </article>
+    </section>
+
+    
+    <section class="newsletter mb-5">
+      <h3 class="newsletter-title mb-2">Subscribe to our newsletter!</h3>
+      <form action="thankyou.html" method="GET" class="newsletter-form" novalidate>
+        <div class="newsletter-input-wrap d-flex justify-content-center">
+          <input name="email" type="email" required class="newsletter-input" placeholder="Enter your email (e.g. jamie@example.com)">
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+          <button type="submit" class="btn btn-primary small-btn">Subscribe</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  
+  <footer class="site-footer text-center">
+    <div class="footer-icons mb-2">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="ficon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.twitter.com" class="ficon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="ficon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="copyright">&copy;2025</div>
+  </footer>
+
+  
+ 
+
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
